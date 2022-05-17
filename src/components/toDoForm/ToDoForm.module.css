@@ -1,0 +1,11 @@
+.content {
+  display: flex;
+  flex-flow: column wrap;
+  width: 30rem;
+  padding: 1rem 1.5rem 1.5rem 1.5rem !important;
+  box-sizing: border-box;
+}
+
+.title {
+  margin-bottom: 1rem;
+}

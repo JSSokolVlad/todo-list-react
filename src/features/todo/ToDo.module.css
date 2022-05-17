@@ -1,0 +1,15 @@
+.toDoWrapper {
+  width: 40rem;
+  margin: 0 auto;
+}
+
+.toDoHeader {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 2rem;
+}
+
+.filter {
+  flex: 1;
+  margin-right: 1.5rem;
+}
