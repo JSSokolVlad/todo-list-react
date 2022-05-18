@@ -22,7 +22,7 @@ const ToDoItem: React.FC<ToDoItemProps> = ({
   );
 
   return (
-    <Paper elevation={3} className={styles.toDoItem}>
+    <Paper elevation={3} className={styles.toDoItem} data-testid="toDoItem">
       <div>
         <CustomCheckbox
           checked={task.isCompleted}
@@ -37,6 +37,7 @@ const ToDoItem: React.FC<ToDoItemProps> = ({
             onClick={() => editTask(task.id)}
           />
           <DeleteOutlineIcon
+            data-testid={`deleteIcon_${task.id}`}
             className={styles.deleteIcon}
             onClick={() => removeTask(task.id)}
           />

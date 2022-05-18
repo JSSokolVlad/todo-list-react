@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <h1>ToDo App</h1>
-      <ToDo />
+      <ToDo data-testid="todo" />
     </div>
   );
 }

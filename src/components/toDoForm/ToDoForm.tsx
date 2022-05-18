@@ -5,11 +5,11 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import { ToDoFormProps } from "./types";
-import styles from "./ToDoForm.module.css";
 import CustomTextField from "../customTextField/CustomTextField";
 import { addTask, changeForm, updateTask } from "../../features/todo/toDoSlice";
 import { useAppDispatch } from "../../app/hooks";
 import { Form } from "../../features/todo/types";
+import styles from "./ToDoForm.module.css";
 
 const ToDoForm: React.FC<ToDoFormProps> = ({ form, open, onClose }) => {
   const dispatch = useAppDispatch();

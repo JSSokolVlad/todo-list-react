@@ -25,9 +25,6 @@ export const toDoSlice = createSlice({
         return task;
       });
     },
-    deleteTask: (state, action: PayloadAction<number>) => {
-      state.tasks = state.tasks.filter((task) => task.id !== action.payload);
-    },
     removeTask: (state, action: PayloadAction<number>) => {
       state.tasks = state.tasks.filter((task) => task.id !== action.payload);
     },
@@ -60,7 +57,6 @@ export const {
   addTask,
   changeForm,
   compliteTask,
-  deleteTask,
   removeTask,
   updateTask,
   resetForm,
