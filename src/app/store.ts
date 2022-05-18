@@ -1,5 +1,5 @@
-import toDoReducer from "./../features/todo/toDoSlice";
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import toDoReducer from "./../features/todo/toDoSlice";
 import { loadState } from "../common/utils/localStorage";
 import { LOCAL_STORAGE_KEY } from "../common/constats/constatns";
 

@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import Button from "@mui/material/Button";
 import ToDoForm from "../../components/toDoForm/ToDoForm";
-import { compliteTask, resetForm, setForm, removeTask } from "./toDoSlice";
+import { resetForm } from "./toDoSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { RootState } from "../../app/store";
 import ToDoList from "../../components/toDoList/toDoList";
@@ -60,46 +60,33 @@ const ToDo: React.FC = () => {
     dispatch(resetForm());
   }, [dispatch]);
 
-  const handleCompleteTask = (id: number) => {
-    dispatch(compliteTask(id));
-  };
-
-  const handleEditTask = (id: number) => {
-    const editableTask = tasks.find((task) => task.id === id);
-
-    if (editableTask) {
-      const { description, id, title } = editableTask;
-
-      dispatch(setForm({ description, id, title }));
-      handleOpenForm();
-    }
-  };
-
-  const handleRemoveTask = (id: number) => {
-    dispatch(removeTask(id));
-  };
-
   return (
     <div className={styles.toDoWrapper}>
       <div className={styles.toDoHeader}>
-        <CustomTextField
-          className={styles.filter}
-          label={FILTER_LABEL}
-          name="filter"
-          ref={inputEl}
-          onChange={onChangeFilter}
-        />
-        <Button variant="contained" onClick={handleOpenForm}>
-          Add ToDo
-        </Button>
+        <div className={styles.headerSection}>
+          <Button
+            className={styles.btnAdd}
+            variant="contained"
+            onClick={handleOpenForm}
+          >
+            Add ToDo
+          </Button>
+        </div>
+        <div className={styles.headerSection}>
+          <CustomTextField
+            className={styles.filter}
+            label={FILTER_LABEL}
+            name="filter"
+            ref={inputEl}
+            onChange={onChangeFilter}
+          />
+        </div>
       </div>
       <ToDoForm form={form} open={openForm} onClose={handleCloseForm} />
       <ToDoList
         filter={filter}
         tasks={filteredTasks}
-        completeTask={handleCompleteTask}
-        editTask={handleEditTask}
-        removeTask={handleRemoveTask}
+        openForm={handleOpenForm}
       />
     </div>
   );

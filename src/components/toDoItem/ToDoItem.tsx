@@ -21,25 +21,34 @@ const ToDoItem: React.FC<ToDoItemProps> = ({
     [filter]
   );
 
+  const handleCompleteTask = useCallback(() => {
+    completeTask(task.id);
+  }, [completeTask, task.id]);
+
+  const handleEditTask = useCallback(() => {
+    editTask(task.id);
+  }, [editTask, task.id]);
+
+  const handleRemoveTask = useCallback(() => {
+    removeTask(task.id);
+  }, [removeTask, task.id]);
+
   return (
     <Paper elevation={3} className={styles.toDoItem} data-testid="toDoItem">
       <div>
         <CustomCheckbox
           checked={task.isCompleted}
-          onChange={() => completeTask(task.id)}
+          onChange={handleCompleteTask}
         />
       </div>
       <div className={styles.contentSection}>
         <div className={styles.titleSection}>
           <span className={styles.title}>{task.title}</span>
-          <EditIcon
-            className={styles.editIcon}
-            onClick={() => editTask(task.id)}
-          />
+          <EditIcon className={styles.editIcon} onClick={handleEditTask} />
           <DeleteOutlineIcon
             data-testid={`deleteIcon_${task.id}`}
             className={styles.deleteIcon}
-            onClick={() => removeTask(task.id)}
+            onClick={handleRemoveTask}
           />
         </div>
         <div className={styles.descriptionSection}>

@@ -3,7 +3,7 @@ export interface CustomTextFieldProps {
   error?: boolean;
   helperText?: string;
   label?: string;
-  multipline?: boolean;
+  multiline?: boolean;
   name: string;
   rows?: number;
   value?: string;

@@ -5,3 +5,8 @@ export interface ToDoFormProps {
   open: boolean;
   onClose: () => void;
 }
+
+export interface StateForm {
+  title: string;
+  description: string;
+}

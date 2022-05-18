@@ -15,6 +15,6 @@ export const saveState = (key: string, state: any) => {
     const serialState = JSON.stringify(state);
     localStorage.setItem(key, serialState);
   } catch (err) {
-    console.log(err);
+    //error handler
   }
 };

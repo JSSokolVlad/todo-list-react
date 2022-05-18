@@ -4,12 +4,19 @@
 }
 
 .toDoHeader {
-  display: flex;
-  flex-flow: row nowrap;
   margin-bottom: 2rem;
+}
+
+.btnAdd {
+  height: 3rem;
+  margin-left: auto;
+  margin-bottom: 1rem;
+}
+
+.headerSection {
+  display: flex;
 }
 
 .filter {
   flex: 1;
-  margin-right: 1.5rem;
 }

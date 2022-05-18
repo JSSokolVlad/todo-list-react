@@ -17,7 +17,7 @@ export const toDoSlice = createSlice({
     addTask: (state, action: PayloadAction<Task>) => {
       state.tasks.push(action.payload);
     },
-    compliteTask: (state, action: PayloadAction<number>) => {
+    completeTask: (state, action: PayloadAction<number>) => {
       state.tasks = state.tasks.map((task) => {
         if (task.id === action.payload) {
           task.isCompleted = !task.isCompleted;
@@ -56,7 +56,7 @@ export const toDoSlice = createSlice({
 export const {
   addTask,
   changeForm,
-  compliteTask,
+  completeTask,
   removeTask,
   updateTask,
   resetForm,

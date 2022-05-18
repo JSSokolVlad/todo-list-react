@@ -1,7 +1,7 @@
 import toDoReducer, {
   addTask,
   changeForm,
-  compliteTask,
+  completeTask,
   removeTask,
   updateTask,
   resetForm,
@@ -58,7 +58,7 @@ describe("toDo reducer", () => {
   });
 
   it("should handle compliteTask", () => {
-    const toDo = toDoReducer(initialState, compliteTask(1));
+    const toDo = toDoReducer(initialState, completeTask(1));
 
     const completedTask = toDo.tasks.find((task) => task.id === 1);
     expect(completedTask?.isCompleted).toEqual(true);

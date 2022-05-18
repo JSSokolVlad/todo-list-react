@@ -1,13 +1,13 @@
-import TextField from "@mui/material/TextField";
 import React from "react";
+import TextField from "@mui/material/TextField";
 import { CustomTextFieldProps } from "./types";
 
 const CustomTextField = React.forwardRef<
   HTMLInputElement,
   CustomTextFieldProps
->(({ error = false, multipline = false, ...props }, ref) => {
+>(({ error = false, multiline = false, ...props }, ref) => {
   return (
-    <TextField inputRef={ref} error={error} multiline={multipline} {...props} />
+    <TextField inputRef={ref} error={error} multiline={multiline} {...props} />
   );
 });
 
